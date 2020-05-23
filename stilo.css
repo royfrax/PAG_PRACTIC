@@ -1,3 +1,53 @@
 body {
 	background-color: indigo;
+	color: lavenderblush;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.calculadora {
+	background-color: indigo;
+	width: fit-content;
+	margin: auto;
+	margin-top: 5px
+}
+.pantalla {
+	padding: 20px 20px 35px 2px;
+	background-color: lightsalmon;
+}
+.numeros {
+	padding: 10px 10px 10px 22px;
+	display: block;
+	text-align: center;
+	border-radius: 10px;
+	border: 0px;
+	background-color: #fff;
+	transition: all 0.09s
+	
+	
+}
+
+.operacion button {
+	display: block;
+	width: 70px;
+	height: 70px;
+	padding: 2px 2px;
+	background-color: #000;
+	color: rgb(133, 132, 182);
+	border-radius: 5px;
+	padding: 2px 2px 2px 2px;
+}
+
+
+button {
+	margin: 2px 0px;
+	padding: 15px 24px;
+	font-size: 19px;
+}
+.resultado {
+	
+	text-align: center;
+}
+.teclas {
+	display: flex;
 }
