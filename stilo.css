@@ -2,6 +2,7 @@ body {
 	background-color: indigo;
 	color: lavenderblush;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-style: oblique ;
 
 }
 
@@ -15,16 +16,22 @@ body {
 	padding: 20px 20px 35px 2px;
 	background-color: lightsalmon;
 }
+
 .numeros {
 	padding: 10px 10px 10px 22px;
 	display: block;
-	text-align: center;
-	border-radius: 10px;
-	border: 0px;
-	background-color: #fff;
+	text-align: justify;
+	border-radius: 3px;
+	border: double;
+	background-color:rgb(255, 255, 255);
 	transition: all 0.09s
 	
-	
+}
+/* Este es el estilo al poner el cursor encima del boton*/
+.numeros:hover{
+	color: #9b0e0e;
+    background-color: #bc6355;
+    text-decoration: none
 }
 
 .operacion button {
@@ -36,18 +43,37 @@ body {
 	color: rgb(133, 132, 182);
 	border-radius: 5px;
 	padding: 2px 2px 2px 2px;
+	transition: all 0.09s
+	
 }
 
 
 button {
+	
 	margin: 2px 0px;
 	padding: 15px 24px;
 	font-size: 19px;
 }
 .resultado {
+	display: block;
 	
 	text-align: center;
 }
 .teclas {
 	display: flex;
+}
+.lore1{
+	color: rgb(250, 250, 136);
+	text-align: left;
+	background-color: rgb(18, 2, 160);
+	font-style: oblique;
+}
+.lore2{
+	color: red;
+	text-align: justify;
+	font-style: initial;
+	background-color: black;
+}
+.parte2{
+	background-color: black;
 }
