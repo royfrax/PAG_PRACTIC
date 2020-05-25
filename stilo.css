@@ -1,5 +1,5 @@
 body {
-	background-color: indigo;
+	background-color: black;
 	color: lavenderblush;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	font-style: oblique ;
@@ -63,17 +63,32 @@ button {
 	display: flex;
 }
 .lore1{
+	
 	color: rgb(250, 250, 136);
 	text-align: left;
 	background-color: rgb(18, 2, 160);
 	font-style: oblique;
+	
+	
 }
 .lore2{
 	color: red;
 	text-align: justify;
 	font-style: initial;
 	background-color: black;
+	width: 50%;
+}
+.lore1,.lore2{
+	display: inline-block;
 }
 .parte2{
 	background-color: black;
+
+}
+.n{
+	background-color: black;
+	color: white;
+}
+.h1{
+	text-align: center;
 }
