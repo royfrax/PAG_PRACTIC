@@ -9,8 +9,11 @@ window.onload = function(){
         x="0"; //guardar número en pantalla
         xi=1; //iniciar número en pantalla: 1=si; 0=no;
         coma=0; //estado coma decimal 0=no, 1=si;
+        ni=0; //número oculto o en espera.
+        op="no"; //operación en curso; "no" =  sin operación.
 
-        function numero(xx) {  //recoge el número pulsado en el argumento.
+        function numero(xx) 
+        {  //recoge el número pulsado en el argumento.
             if (x=="0" || xi==1  ) {  // inicializar un número, 
                pantalla.innerHTML=xx; //mostrar en pantalla
                x=xx; //guardar número;
@@ -22,7 +25,8 @@ window.onload = function(){
             xi=0 //el número está iniciado y podemos ampliarlo.
             }			 
 
-            function numero(xx) { //recoge el número pulsado en el argumento.
+            function numero(xx) 
+            { //recoge el número pulsado en el argumento.
                 if (x=="0" || xi==1  ) { // inicializar un número, 
                    pantalla.innerHTML=xx; //mostrar en pantalla
                    x=xx; //guardar número
@@ -48,3 +52,8 @@ window.onload = function(){
                    }
                    xi=0 //el número está iniciado y podemos ampliarlo.
                 }
+                function operar(s) {
+                    ni=x //ponemos el 1er número en "numero en espera" para poder escribir el segundo.
+                    op=s; //guardamos tipo de operación.
+                    xi=1; //inicializar pantalla.
+                    }		

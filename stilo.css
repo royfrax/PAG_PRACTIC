@@ -1,24 +1,24 @@
 
 body {/*esto es para todo el documento*/
 	background-color: black; 
-	color: lightgray;
-
 }
+
+h1{color: seashell;} /*color del titulo*/
+
 /*aspectos generales: bordes y color de fondo de calculadora*/
 .calculadora { 
-	border: 3px rgb(112, 3, 255); 
+	border: 3px indigo; 
 	width: 250px;
 	text-align: center;
-	background-color:rgb(155, 5, 5); 
 	background-color: indigo;
-	
 	margin: auto;
 }
 .calculadora input.largo{
 	width: 60px;
 }
 /*pantalla de visualización: bordes, posición, color de fondo, estilo letra.*/
-#textoPantalla { width: 185px;
+#textoPantalla {
+	width: 185px;
 	border: 2px black solid;
 	text-align: right; 
 	position: relative;
@@ -27,11 +27,13 @@ body {/*esto es para todo el documento*/
 	background-color: white;
 	font-family: "courier new"; 
 	overflow: hidden;}
-
+.BotonNumero{
+	background-color: black;
+	color: white;
+}
 
 .pantalla {
 	padding: 20px 20px 35px 2px;
-	
 	border: solid, #9b0e0e;
 }
 
@@ -40,8 +42,6 @@ body {/*esto es para todo el documento*/
 	display: block;
 	text-align: justify;
 	transition: all 0.09s
-	
-	
 }
 /* Este es el estilo al poner el cursor encima del boton*/
 .numeros:hover{
@@ -49,7 +49,7 @@ body {/*esto es para todo el documento*/
     background-color: #bc6355;
     text-decoration: none
 }
-.n{
+.number{
 	background-color: black;
 	color: white;
 	transition: all 0.09s
@@ -70,29 +70,12 @@ body {/*esto es para todo el documento*/
 	color: rgb(133, 132, 182);
 	padding: 2px 2px 2px 2px;
 	transition: all 0.09s
-	
 }
 
-
-button {
-	
-	margin: 2px 0px;
-	padding: 15px 24px;
-	font-size: 18px;
-}
-.resultado {
-	display: block;
-	
-	text-align: center;
-}
-.teclas {
-	display: flex;
-}
-
-
-.parte2{
-	background-color: black;
-
+.Ope{
+	position: relative;
+	color: #7811ecd7;
+	background-color: grey;
 }
 
 
