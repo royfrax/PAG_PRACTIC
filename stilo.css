@@ -1,23 +1,34 @@
-body {
-	background-color: black;
-	color: lavenderblush;
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-	font-style: oblique ;
+
+body {/*esto es para todo el documento*/
+	background-color: black; 
+	color: lightgray;
 
 }
-.h1{
+/*aspectos generales: bordes y color de fondo de calculadora*/
+.calculadora { 
+	border: 3px rgb(112, 3, 255); 
+	width: 250px;
 	text-align: center;
-}
-#resultado{
-	font-family: monospace;
-	font-size: 20px;
-}
-.calculadora {
+	background-color:rgb(155, 5, 5); 
 	background-color: indigo;
-	width: fit-content;
+	
 	margin: auto;
-	margin-top: 5px
 }
+.calculadora input.largo{
+	width: 60px;
+}
+/*pantalla de visualización: bordes, posición, color de fondo, estilo letra.*/
+#textoPantalla { width: 185px;
+	border: 2px black solid;
+	text-align: right; 
+	position: relative;
+	left: 23px;
+	padding: 0px 5px;
+	background-color: white;
+	font-family: "courier new"; 
+	overflow: hidden;}
+
+
 .pantalla {
 	padding: 20px 20px 35px 2px;
 	
