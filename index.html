@@ -16,47 +16,49 @@
     </div>
 
     <div class="calculadora">
-        <div class="pantalla">
-            <div id="resultado"></div> 
-        </div>
+        <form action="#" name="calculadora" id="calculadora">
+            <p id="textoPantalla">0</p>
         <div class="teclas">
             <div class="numeros">  
                 <div>
-                    <button class="n" id="n1">1</button>
-                    <button class="n" id="n2">2</button>
-                    <button class="n" id="n3">3</button>
+                    <input type="button" value="1" class="n"/> <!--son los botones-->
+                    <input type="button" value="2" class="n"/><!--son los botones-->
+                    <input type="button" value="3" class="n"/><!--son los botones-->
+                    <input type="button" value="-" /><!--son los botones-->
+                    <input type="button" value="1/x" /><!--son los botones-->
                 </div>
                 <div>
-                    <button class="n" id="n4">4</button>
-                    <button class="n" id="n5">5</button>
-                    <button class="n" id="n6">6</button>
+                    <input type="button" value="4" class="n"/><!--son los botones-->
+                    <input type="button" value="5" class="n"/><!--son los botones-->
+                    <input type="button" value="6" class="n"/><!--son los botones-->
+                    <input type="button" value="*" /><!--son los botones-->
+                    <input type="button" value="%" /><!--son los botones-->
                 </div>
                 <div>
-                    <button class="n" id="n7">7</button>
-                    <button class="n" id="n8">8</button>
-                    <button class="n" id="n9">9</button>
+                    <input type="button" value="7" class="n"/><!--son los botones-->
+                    <input type="button" value="8" class="n"/><!--son los botones-->
+                    <input type="button" value="9" class="n"/><!--son los botones-->
+                    <input type="button" value="0" /><!--son los botones-->
+                    <input type="button" value="/"  /><!--son los botones-->
+                    <input type="button" value="Raiz" /><!--son los botones-->
                 </div>
-                <div>
-                    <button class="n" id="n0">0</button>
-                    <button class="n" id="sr">=</button>
-                    <button class="n" id="CE">c</button>
-                </div>
+                
             </div>
             <div class="operacion">
-                <button id="s">+</button>
-                <button id="r">-</button>
-                <button id="d">÷</button>
-                <button id="m">x</button>
+                <input type="button" value="+/-" />
+                <input type="button" value="." />
+                <input type="button" value="+" />
+                <input type="button" value="="/>
+                <input type="button" class="largo" value="Retr" />
+                <input type="button" class="largo" value="CE" />
+                <input type="button" class="largo" value="C" />
             </div>
         </div>
         <div class="resultado">
             
         </div>
     </div>
-   
-       
-            
-
+    </form> 
     </div>
     <script src= "cod.js"></script>
 </body>
