@@ -78,3 +78,15 @@ window.onload = function(){ //Acciones tras cargar la página
              pantalla.innerHTML=x;
              xi=1; //reiniciar pantalla al pulsar otro número.
              }
+    function borradoParcial(){
+        pantalla.innerHTML=0; // Borrado de pantalla;
+        x=0;// borrado indidcador numero pantalla.
+        coma=0; //reiniciamos tambien  la coma
+    }
+    function borradoTotal(){
+        pantalla.innerHTML=0; //poner pantalla a 0
+        x="0"; //reiniciar numero en pantalla
+        coma=0;// reubucuar estado coma decimal
+        ni=0;// indicador de numero oculto a 0 
+        op="no"// borrar operacion en curso.
+    }
