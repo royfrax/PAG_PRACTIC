@@ -23,7 +23,7 @@ window.onload = function(){
                x+=xx; //añadimos y guardamos
                }
             xi=0 //el número está iniciado y podemos ampliarlo.
-            }			 
+        }			 
 
             function numero(xx) 
             { //recoge el número pulsado en el argumento.
@@ -57,3 +57,28 @@ window.onload = function(){
                     op=s; //guardamos tipo de operación.
                     xi=1; //inicializar pantalla.
                     }		
+                    function igualar() {
+                        if (op=="no") { //no hay ninguna operación pendiente.
+                           pantalla.innerHTML=x;	//mostramos el mismo número	
+                           }
+                        else { //con operación pendiente resolvemos
+                           sl=ni+op+x; // escribimos la operación en una cadena
+                           sol=eval(sl) //convertimos la cadena a código y resolvemos
+                           pantalla.innerHTML=sol //mostramos la solución
+                           x=sol; //guardamos la solución
+                           op="no"; //ya no hay operaciones pendientes
+                           xi=1; //se puede reiniciar la pantalla.
+                           }
+                       }
+                       function porcent() { 
+                        x=x/100 //dividir por 100 el número
+                        pantalla.innerHTML=x; //mostrar en pantalla
+                        igualar() //resolver y mostrar operaciones pendientes
+                        xi=1 //reiniciar la pantalla
+                        }
+                        function opuest() { 
+                            nx=Number(x); //convertir en número
+                            nx=-nx; //cambiar de signo
+                            x=String(nx); //volver a convertir a cadena
+                            pantalla.innerHTML=x; //mostrar en pantalla.
+                            }
