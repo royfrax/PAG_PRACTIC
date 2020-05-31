@@ -7,7 +7,7 @@ h1{color: seashell;} /*color del titulo*/
 
 /*aspectos generales: bordes y color de fondo de calculadora*/
 .calculadora { 
-	border: 3px indigo; 
+	border: 3px white; 
 	width: 250px;
 	text-align: center;
 	background-color: indigo;
@@ -78,4 +78,7 @@ h1{color: seashell;} /*color del titulo*/
 	background-color: grey;
 }
 
-
+.historial{
+	color: white;
+	background-color: tomato;
+}

@@ -60,10 +60,11 @@ window.onload = function(){ //Acciones tras cargar la página
              xi=1; //se puede reiniciar la pantalla 
              }
     function porcent() { 
-             x=x/100 //dividir por 100 el número
-             pantalla.innerHTML=x; //mostrar en pantalla
-             igualar() //resolver y mostrar operaciones pendientes
-             xi=1 //reiniciar la pantalla
+            x=x/100 //dividir por 100 el número
+            pantalla.innerHTML=x; //mostrar en pantalla
+            igualar() //resolver y mostrar operaciones pendientes
+            xi=1 //reiniciar la pantalla            
+    
              }
     function opuest() { 
              nx=Number(x); //convertir en número
@@ -79,14 +80,50 @@ window.onload = function(){ //Acciones tras cargar la página
              xi=1; //reiniciar pantalla al pulsar otro número.
              }
     function borradoParcial(){
-        pantalla.innerHTML=0; // Borrado de pantalla;
-        x=0;// borrado indidcador numero pantalla.
-        coma=0; //reiniciamos tambien  la coma
+            pantalla.innerHTML=0; // Borrado de pantalla;
+             x=0;// borrado indidcador numero pantalla.
+            coma=0; //reiniciamos tambien  la coma
     }
     function borradoTotal(){
-        pantalla.innerHTML=0; //poner pantalla a 0
-        x="0"; //reiniciar numero en pantalla
-        coma=0;// reubucuar estado coma decimal
-        ni=0;// indicador de numero oculto a 0 
-        op="no"// borrar operacion en curso.
+            pantalla.innerHTML=0; //poner pantalla a 0
+            x="0"; //reiniciar numero en pantalla
+            coma=0;// reubucuar estado coma decimal
+            ni=0;// indicador de numero oculto a 0 
+            op="no"// borrar operacion en curso.
     }
+
+    function teclado (elEvento) { 
+        evento = elEvento || window.event;
+        k=evento.keyCode; //número de código de la tecla.
+        //teclas númericas del teclado alfamunérico
+        if (k>47 && k<58) { 
+           p=k-48; //buscar número a mostrar.
+           p=String(p) //convertir a cadena para poder añádir en pantalla.
+           numero(p); //enviar para mostrar en pantalla
+           }	
+        //Teclas del teclado númerico. Seguimos el mismo procedimiento que en el anterior.
+        if (k>95 && k<106) {
+           p=k-96;
+           p=String(p);
+           numero(p);
+           }
+        if (k==110 || k==190) {numero(".")} //teclas de coma decimal
+        if (k==106) {operar('*')} //tecla multiplicación
+        if (k==107) {operar('+')} //tecla suma
+        if (k==109) {operar('-')} //tecla resta
+        if (k==111) {operar('/')} //tecla división
+        if (k==32 || k==13) {igualar()} //Tecla igual: intro o barra espaciadora
+        if (k==46) {borradoTotal()} //Tecla borrado total: "supr"
+        if (k==8) {retro()} //Retroceso en escritura : tecla retroceso.
+        if (k==36) {borradoParcial()} //Tecla borrado parcial: tecla de inicio.
+        }
+
+        
+        function retro(){ //Borrar sólo el último número escrito.
+            cifras=x.length; //hayar número de caracteres en pantalla
+            br=x.substr(cifras-1,cifras) //info del último caracter
+            x=x.substr(0,cifras-1) //quitar el ultimo caracter
+            if (x=="") {x="0";} //si ya no quedan caracteres, pondremos el 0
+            if (br==".") {coma=0;} //Si hemos quitado la coma, se permite escribirla de nuevo.
+            pantalla.innerHTML=x; //mostrar resultado en pantalla	 
+            }
