@@ -1,87 +1,63 @@
 
 body {/*esto es para todo el documento*/
-	background-color: black; 
+	background:fixed linear-gradient(to top,#00AAFF,#00FF6C)
+	
 }
 
-h1{color: seashell;} /*color del titulo*/
+h1{color: rgb(8, 104, 230);} /*color del titulo*/
 
 /*aspectos generales: bordes y color de fondo de calculadora*/
 .calculadora { 
-	border: 3px white; 
+	
 	width: 250px;
 	text-align: center;
-	background-color: indigo;
-	margin: auto;
+	background-color: #00AAFF;
+	
 }
 .calculadora input.largo{
-	width: 60px;
+	width: 50px;
 }
 /*pantalla de visualización: bordes, posición, color de fondo, estilo letra.*/
 #textoPantalla {
 	width: 185px;
-	border: 2px black solid;
+	border: 2px;
 	text-align: right; 
 	position: relative;
 	left: 23px;
 	padding: 0px 5px;
-	background-color: white;
+	background-color: rgba(0, 255, 128, 0.411);
 	font-family: "courier new"; 
-	overflow: hidden;}
-.BotonNumero{
-	background-color: black;
-	color: white;
+	overflow: hidden;
+	}
+#pantalla2{/* pantalla donde se guarda el resultado */
+	color: rgb(7, 7, 206);
+	font-style: italic;
+	background-color: peachpuff;
+	width: 185px;
+	text-align: center; 
+	position: relative;
+	left: 23px;
+	padding: 0px 5px;
+
+}
+.number{/* estilo de los numeros */
+	color: rgb(70, 105, 3);
+	margin: auto;
+	
 }
 
-.pantalla {
-	padding: 20px 20px 35px 2px;
-	border: solid, #9b0e0e;
-}
-
-.numeros {
-	padding: 10px 10px 10px 22px;
-	display: block;
-	text-align: justify;
-	transition: all 0.09s
-}
-/* Este es el estilo al poner el cursor encima del boton*/
-.numeros:hover{
-	color: #9b0e0e;
-    background-color: #bc6355;
-    text-decoration: none
-}
-.number{
-	background-color: black;
-	color: white;
-	transition: all 0.09s
-}
-
-.n:hover{
-	color: #9b0e0e;
-    background-color: #bc6355;
+.number:hover{
+	color: #425700;
+    background-color: #1ba802;
     text-decoration: none;
 }
-
-.operacion button {
-	display: block;
-	width: 70px;
-	height: 70px;
-	padding: 2px 2px;
-	background-color: #000;
-	color: rgb(133, 132, 182);
-	padding: 2px 2px 2px 2px;
-	transition: all 0.09s
-}
-
 .Ope{
 	position: relative;
 	color: #7811ecd7;
-	background-color: grey;
+	margin: auto;
+}
+.Ope:hover{
+	color: #000000bc;
+    background-color: #cfe0ff;
 }
 
-.historial{
-	color: white;
-	background-color: tomato;
-}
-h3{ color: wheat;
-
-}

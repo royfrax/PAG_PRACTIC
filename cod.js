@@ -1,12 +1,14 @@
 window.onload = function(){ //Acciones tras cargar la página
     pantalla=document.getElementById("textoPantalla"); //elemento pantalla de salida
-    }
-    x="0"; //número en pantalla
-    xi=1; //iniciar número en pantalla: 1=si; 0=no;
-    coma=0; //estado coma decimal 0=no, 1=si;
-    ni=0; //número oculto o en espera.
-    op="no"; //operación en curso; "no" =  sin operación.
+    document.onkeydown = teclado ; //funcion de teclado disponible 
+    pantalla2=document.getElementById("pantalla2");
     
+    }
+    var x="0"; //número en pantalla
+    var xi=1; //iniciar número en pantalla: 1=si; 0=no;
+    var coma=0; //estado coma decimal 0=no, 1=si;
+    var ni=0; //número oculto o en espera.
+    var op="no"; //operación en curso; "no" =  sin operación.
     //mostrar número en pantalla según se va escribiendo:
     function numero(xx) { //recoge el número pulsado en el argumento.
              if (x=="0" || xi==1  ) {	// inicializar un número, 
@@ -16,30 +18,30 @@ window.onload = function(){ //Acciones tras cargar la página
                    pantalla.innerHTML="0."; //escribimos 0.
                    x=xx; //guardar número
                    coma=1; //cambiar estado de la coma
-                   }
-               }
+                }
+            }
                else { //continuar escribiendo un número
                    if (xx=="." && coma==0) { //si escribimos una coma decimal pòr primera vez
-                       pantalla.innerHTML+=xx;
-                       x+=xx;
+                    pantalla.innerHTML+=xx;
+                    x+=xx;
                        coma=1; //cambiar el estado de la coma  
-                   }
+                    }
                    //si intentamos escribir una segunda coma decimal no realiza ninguna acción.
-                   else if (xx=="." && coma==1) {} 
+                    else if (xx=="." && coma==1) {} 
                    //Resto de casos: escribir un número del 0 al 9 	 
-                   else {
-                       pantalla.innerHTML+=xx;
-                       x+=xx
-                   }
+                else {
+                    pantalla.innerHTML+=xx;
+                    x+=xx
+                }
                 }
                 xi=0 //el número está iniciado y podemos ampliarlo.
-             }
+            }
     function operar(s) {
              igualar() //si hay operaciones pendientes se realizan primero
              ni=x //ponemos el 1º número en "numero en espera" para poder escribir el segundo.
              op=s; //guardamos tipo de operación.
              xi=1; //inicializar pantalla.
-             }	
+            }	
     function igualar() {
              if (op=="no") { //no hay ninguna operación pendiente.
                 pantalla.innerHTML=x;	//mostramos el mismo número	
@@ -58,31 +60,30 @@ window.onload = function(){ //Acciones tras cargar la página
              pantalla.innerHTML=x; //mostrar en pantalla resultado
              op="no"; //quitar operaciones pendientes.
              xi=1; //se puede reiniciar la pantalla 
-             }
+            }
     function porcent() { 
-            x=x*.100;//dividir por 100 el número
-
+            x=x/100;//dividir por 100 el número
             pantalla.innerHTML=x; //mostrar en pantalla
             igualar() //resolver y mostrar operaciones pendientes
             xi=1 //reiniciar la pantalla            
     
-             }
+            }
     function opuest() { 
              nx=Number(x); //convertir en número
              nx=-nx; //cambiar de signo
              x=String(nx); //volver a convertir a cadena
-             pantalla.innerHTML=x;//mostrar en pantalla.
-             }
+            pantalla.innerHTML=x;//mostrar en pantalla.
+            }
     function inve() {
-             nx=Number(x);
-             nx=(1/nx);
-             x=String(nx);		 
-             pantalla.innerHTML=x;
+            nx=Number(x);
+            nx=(1/nx);
+            x=String(nx);		 
+            pantalla.innerHTML=x;
              xi=1; //reiniciar pantalla al pulsar otro número.
-             }
+            }
     function borradoParcial(){
-            pantalla.innerHTML=0; // Borrado de pantalla;
-             x=0;// borrado indidcador numero pantalla.
+            pantalla.innerHTML=0;// Borrado de pantalla;
+            x=0;// borrado indidcador numero pantalla.
             coma=0; //reiniciamos tambien  la coma
     }
     function borradoTotal(){
@@ -101,35 +102,42 @@ window.onload = function(){ //Acciones tras cargar la página
         if (br==".") {coma=0;} //Si hemos quitado la coma, se permite escribirla de nuevo.
         pantalla.innerHTML=x; //mostrar resultado en pantalla	 
         }
+    function al_cuadrado(){
+        x= x * x;
+        pantalla.innerHTML=x;
+    }
 
-    //function teclado (elEvento) { 
-      //  evento = elEvento || window.event;
-        //k=evento.keyCode; //número de código de la tecla.
-        //teclas númericas del teclado alfamunérico
-        //if (k>47 && k<58) { 
-           //p=k-48; //buscar número a mostrar.
-           //p=String(p) //convertir a cadena para poder añádir en pantalla.
-           //numero(p); //enviar para mostrar en pantalla
-          // }	
+    function teclado (elEvento) { 
+        evento = elEvento || window.event;
+        k=evento.keyCode; //número de código de la tecla.
+       //teclas númericas del teclado alfamunérico
+        if (k>47 && k<58) { 
+           p=k-48; //buscar número a mostrar.
+           p=String(p) //convertir a cadena para poder añádir en pantalla.
+           numero(p); //enviar para mostrar en pantalla
+        }	
         //Teclas del teclado númerico. Seguimos el mismo procedimiento que en el anterior.
-        //if (k>95 && k<106) {
-           //p=k-96;
-           //p=String(p);
-           //numero(p);
-           //}
-        //if (k==110 || k==190) {numero(".")} //teclas de coma decimal
-        //if (k==106) {operar('*')} //tecla multiplicación
-        //if (k==107) {operar('+')} //tecla suma
-        //if (k==109) {operar('-')} //tecla resta
-        //if (k==111) {operar('/')} //tecla división
-        //if (k==32 || k==13) {igualar()} //Tecla igual: intro o barra espaciadora
-        //if (k==46) {borradoTotal()} //Tecla borrado total: "supr"
-        //if (k==8) {retro()} //Retroceso en escritura : tecla retroceso.
-        //if (k==36) {borradoParcial()} //Tecla borrado parcial: tecla de inicio.
-        //}
-function porcentR3(){
-    pantalla=document.getElementById("textoPantalla2");
-    porcent=x * xi /100;
-}
-        
-       
+        if (k>95 && k<106) {
+            p=k-96;
+            p=String(p);
+            numero(p);
+            }
+        if (k==110 || k==190) {numero(".")} //teclas de coma decimal
+        if (k==106) {operar('*')} //tecla multiplicación
+        if (k==107) {operar('+')} //tecla suma
+        if (k==109) {operar('-')} //tecla resta
+        if (k==111) {operar('/')} //tecla división
+        if (k==32 || k==13) {igualar()} //Tecla igual: intro o barra espaciadora
+        if (k==46) {borradoTotal()} //Tecla borrado total: "supr"
+        if (k==8) {retro()} //Retroceso en escritura : tecla retroceso.
+        if (k==36) {borradoParcial()} //Tecla borrado parcial: tecla de inicio.
+        if (k==71) {save()}// guardar resultado 
+        }
+    function save(){// guardar el resultado 
+        if(x > 0){
+            pantalla2.innerHTML=x; //muestra el resultado si x es mayor a 0
+        }
+        else{
+            pantalla2.innerHTML="sin resultados aun";// si x = 0 
+        }
+    }

@@ -9,11 +9,11 @@
     
     
     <h1>Calculadora Sencilla </h1>
-    <h2></h2>
+    
 </head>
 <body>
     <div class="calculadora"
-    <form action="#" name="calculadora" id="calculadora">
+        <form action="#" name="calculadora" id="calculadora">
     <p id="textoPantalla">0</p>
     <p>
         <input type="button" class="largo" value="Retr" onclick="retro()"/>
@@ -26,6 +26,7 @@
         <input type="button" value="9" onclick="numero(`9`)"class="number">
         <input type="button" value="/" onclick="operar(`/`)"class="number">
         <input type="button" value="Raiz" onclick="raizc()" class="Ope"/>
+        <input type="button" value="^2" onclick="al_cuadrado()"class="Ope">
     </p>
     <p>
         <input type="button" value="4" onclick="numero(`4`)"class="number">
@@ -46,15 +47,15 @@
         <input type="button" value="+/-" onclick="opuest()" class="Ope" />
         <input type="button" value="." onclick="numero('.')"  class="Ope"/>
         <input type="button" value="+" onclick="operar('+')" class="Ope" />
-        <input type="button" value="=" onclick="igualar()" class="Ope" />
+        <input type="button" value="=" onclick="igualar()" class="Ope" /> 
+        <br>
+        <br>
+        <input type="button" value="guardar" onclick="save()"class="Ope"> 
     </p>
-    </form>
-    </div>
-    <h2 class="historial">historial De Resultados</h2>
-<h3>porcentajes</h3>
-    <div id="textoPantalla2">
+        </form>
+        <p id="pantalla2"></p>
         
-
+    </div>
     </div>
     <script src= "cod.js"></script>
 </body>
