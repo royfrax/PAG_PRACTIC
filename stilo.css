@@ -1,33 +1,45 @@
-
 body {/*esto es para todo el documento*/
 	background:fixed linear-gradient(to top,#00AAFF,#00FF6C)
-	
 }
 
 h1{color: rgb(8, 104, 230);} /*color del titulo*/
 
 /*aspectos generales: bordes y color de fondo de calculadora*/
 .calculadora { 
-	
-	width: 250px;
-	text-align: center;
+	display: block;
+	margin: 0 auto;
+	padding: 20px;
+	width: 225px;
+	height: 485px;
+	border-radius: 10px;
 	background-color: #00AAFF;
 	
 }
-.calculadora input.largo{
+.calculadora td input {
+	display: block;
+	width: 50px;
+	height: 50px;
+	font-size: 20px;
+}
+.s{width: 50px;height: 50px;display: block;margin: auto;}
+
+.calculadora input.largo{ /*estilo de lo botones C CE <*/
 	width: 50px;
 }
 /*pantalla de visualización: bordes, posición, color de fondo, estilo letra.*/
 #textoPantalla {
-	width: 185px;
+	width: 180px;
+	height: 55px;
 	border: 2px;
+	font-size: 33px;
 	text-align: right; 
 	position: relative;
-	left: 23px;
+	left: 15px;
 	padding: 0px 5px;
-	background-color: rgba(0, 255, 128, 0.411);
+	background-color: rgba(0, 255, 128, 0.739);
 	font-family: "courier new"; 
-	overflow: hidden;
+	
+	overflow-x:auto;
 	}
 #pantalla2{/* pantalla donde se guarda el resultado */
 	color: rgb(7, 7, 206);
@@ -38,26 +50,9 @@ h1{color: rgb(8, 104, 230);} /*color del titulo*/
 	position: relative;
 	left: 23px;
 	padding: 0px 5px;
-
 }
 .number{/* estilo de los numeros */
 	color: rgb(70, 105, 3);
 	margin: auto;
 	
 }
-
-.number:hover{
-	color: #425700;
-    background-color: #1ba802;
-    text-decoration: none;
-}
-.Ope{
-	position: relative;
-	color: #7811ecd7;
-	margin: auto;
-}
-.Ope:hover{
-	color: #000000bc;
-    background-color: #cfe0ff;
-}
-
