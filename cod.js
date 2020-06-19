@@ -68,7 +68,6 @@ window.onload = function(){ //Acciones tras cargar la página
             pantalla.innerHTML=x; //mostrar en pantalla
             igualar() //resolver y mostrar operaciones pendientes
             xi=1 //reiniciar la pantalla            
-    
             }
     function opuest() { 
              nx=Number(x); //convertir en número
@@ -143,3 +142,4 @@ window.onload = function(){ //Acciones tras cargar la página
             pantalla2.innerHTML="sin resultados aun";// si x = 0 
         }
     }
+    
